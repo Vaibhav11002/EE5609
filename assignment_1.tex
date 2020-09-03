@@ -249,50 +249,44 @@ https://github.com/Vaibhav11002/EE5609/blob/master/Codes/assignment_1.py
 
 
 \section{Problem}
-For
-	$
+For,
+	\begin{align*}
 	\vec{a}=\myvec{2\\2\\3},
 	\vec{b}=\myvec{-1\\2\\1} \text{ and }
 	\vec{c}=\myvec{3\\1\\0}.
-	$
-	Find \emph{k} such that $(\vec{a}+k\vec{b})\perp\vec{c}$.
-\begin{center}
+	\end{align*}
 
+	Find k such that, 
+	\begin{align*}
+	(\vec{a}+ k \vec{b})\perp\vec{c}.  
+	\end{align*}
 \section{Solution}
 \begin{flushleft}
 
 The two vectors are perpendicular to each other if their dot product is zero. \\
 So, 
-\begin{center}
 \begin{align}
-\vec{c}^T\brak{\vec{a}+\emph{k}\vec{b}}=0 \\
-\vec{c}^T\vec{a}+\emph{k}\vec{c}^T\vec{b}=0 \\
-\emph{k}\vec{c}^T\vec{b} = -{\vec{c}^T\vec{a}} \\
-\implies\emph{k} = \frac{-\vec{c}^T\vec{a}}{\vec{c}^T\vec{b}}
+\vec{c}^T\brak{\vec{a}+ k\vec{b}}=0 \\
+\vec{c}^T\vec{a}+ k\vec{c}^T\vec{b}=0 \\
+k\vec{c}^T\vec{b} = -{\vec{c}^T\vec{a}} \\
+\implies k= \frac{-\vec{c}^T\vec{a}}{\vec{c}^T\vec{b}}
 \end{align}
-\end{center}
 \begin{flushleft}
 
-On solving the matrix multiplication, \\
-\begin{center}
+On solving the matrix multiplication,
 \begin{align}
-\vec{c}^T\vec{b} = -1, \\
-\vec{c}^T\vec{a} =  8  
+\vec{c}^T\vec{b} = -1, \\ \vec{c}^T\vec{a} =  8  
 \end{align}
 
 \begin{flushleft}
-
 So, 
-\begin{center}
-
 \begin{align}
-\implies\emph{k}= \frac{-8}{-1}\\
-\emph{k} = 8
+\implies k= \frac{-8}{-1}\\
+k = 8
 \end{align}
 
 \begin{flushleft}
-
-Thus for the value of \emph{k}=8, \\
-we get (\vec{a}+\emph{k}\vec{b})\perp\vec{c}. 
-
+Thus for the value of
+k=8, \\
+we get $(\vec{a}+ k\vec{b})\perp\vec{c}$ 
 \end{document}
