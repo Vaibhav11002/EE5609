@@ -171,7 +171,7 @@ Thus from (2.0.5) we get,
 
 From (2.0.1), 
 \begin{align}
-    2\vec{X}+\vec{Y} &= \vec{A}\vec{B} \\
+    2\vec{X}+\vec{Y} &=\vec{A}\vec{B} \\
     &= \myvec{1 & 0 \\ -3 & 2}
 \end{align}
 Where B is a block matrix comprising \vec{X} and \vec{Y}. So, 
@@ -184,4 +184,25 @@ Now,
     &= \myvec{1 & 0 \\ -3 & 2} 
 \end{align}
 
+Since $\vec{B}$ is a 4X2 matrix, $\vec{A}$ should be 2X4 so that the product $\vec{A}\vec{B}$ is a 2x2 matrix.\\ 
+Let $\vec{A}$ be a block matrix comprising of $\vec{A_{1}}$ and
+$\vec{A_{2}}$. 
+\begin{align}
+    \vec{A} &= \myvec{\vec{A_{1}}& \vec{A_{2}}}
+\end{align}
+Now, 
+\begin{align}
+    \vec{A}\vec{B} &= \myvec{\vec{A_{1}}& \vec{A_{2}}}\myvec{\vec{X} \\ \vec{Y}}\notag\\
+    &= \vec{A_{1}}\vec{X} + \vec{A_{2}}\vec{Y}
+\end{align}
+From (2.0.6) we get, 
+\begin{align}
+    2\vec{X}+\vec{Y} &= (2\vec{I})\vec{X} + \vec{I}\vec{Y}\notag\\
+    &=\vec{A_{1}}\vec{X} + \vec{A_{2}}\vec{Y}
+\end{align}
+Thus, $\vec{A_{1}} = 2\vec{I}$ and $\vec{A_{2}} = \vec{I}$ \\
+Hence we get the matrix, 
+\begin{align*}
+    \boxed{\vec{A} =  \myvec{2 & 0 & 1 & 0 \\ 0 & 2 & 0 & 1}}
+\end{align*}
 \end{document}
