@@ -144,7 +144,7 @@ https://github.com/Vaibhav11002/EE5609/blob/master/Assignment_2/Codes/assignment
 \end{lstlisting}
 
 \section{Problem}
-Find $\vec{X}$ if $\vec{Y} = \myvec{ 3 & 2 \\ 1 & 4 }$ and $2\vec{X}+\vec{Y} = \myvec{1 & 0 \\ -3 & 2}$
+Find $\vec{X}$ if $\vec{Y} = \myvec{ 3 & 2 \\ 1 & 4 }$ and $2\vec{X}+\vec{Y} = \myvec{1 & 0 \\ -3 & 2}$. Express $2\vec{X}+\vec{Y} = \vec{A}\vec{B}$, where B is a block matrix comprising of $\vec{X}$ and $\vec{Y}$ and find the matrix $\vec{A}$. 
 \vspace{2mm}
 
 \section{Solution}
@@ -168,4 +168,20 @@ Thus from (2.0.5) we get,
 \begin{align*}
     \boxed{ \vec{X} = \myvec{-1 & -1 \\ -2 & -1} }
 \end{align*}
+
+From (2.0.1), 
+\begin{align}
+    2\vec{X}+\vec{Y} &= \vec{A}\vec{B} \\
+    &= \myvec{1 & 0 \\ -3 & 2}
+\end{align}
+Where B is a block matrix comprising \vec{X} and \vec{Y}. So, 
+\begin{align}
+    \vec{B} &= \myvec{\vec{X} \\ \vec{Y}}
+\end{align}
+Now, 
+\begin{align}
+    \vec{A}\vec{B} &= \vec{A}\myvec{\vec{X} \\ \vec{Y}} \notag\\
+    &= \myvec{1 & 0 \\ -3 & 2} 
+\end{align}
+
 \end{document}
