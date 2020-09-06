@@ -202,24 +202,30 @@ Hence we get the matrix,
 The first equation is, 
 \begin{align}
     \vec{Y} &= \myvec{ 3 & 2 \\ 1 & 4 }\notag\\
-    \implies\myvec{\vec{O} & \vec{I}}\myvec{\vec{X} \\ \vec{Y}} &= \myvec{ 3 & 2 \\ 1 & 4 }
+    \implies\myvec{\vec{O} & \vec{I}}\myvec{\vec{X} \\ \vec{Y}} &= \myvec{ 3 & 2 \\ 1 & 4 } &= \vec{M}
 \end{align}
 The second equation is, 
 \begin{align}
     2\vec{X}+\vec{Y} = \myvec{1 & 0 \\ -3 & 2} \notag\\
     \implies\myvec{2\vec{I} & \vec{I}}\myvec{\vec{X} \\ \vec{Y}}
-    &= \myvec{1 & 0 \\ -3 & 2}
+    &= \myvec{1 & 0 \\ -3 & 2} &= \vec{N}
+\end{align}
+Combining equations (2.0.13) and (2.0.14) into a single matrix equation and constructing the augmented matrix, 
+\begin{align}
+    \myvec{0 & I & M \\ 2I & I &  N}
+\end{align}
+Transforming (2.0.15) using row reduction, 
+\begin{align}
+    \myvec{0 & I & M \\ 2I & I &  N} \xleftrightarrow[]{R1\xleftrightarrow{}R2}\myvec{2I & I & N\\ 0 & I & M}\xleftrightarrow[]{R1 \xleftarrow[]{} R1-R2} \nonumber
 \end{align}
 
-Subtracting (2.0.14) from (2.0.13),
 \begin{align}
-    \implies\myvec{2\vec{I} & \vec{O}}\myvec{\vec{X} \\ \vec{Y}}
-    &= \myvec{-2 & -2 \\ -4 & -2} \notag\\
-    \implies\myvec{\vec{I} & \vec{O}}\myvec{\vec{X} \\ \vec{Y}}
+    \myvec{2I & 0 & N-M \\ 0 & I & M} \xleftrightarrow[]{R1 \xleftarrow[]{} \frac{R1}{2}} \myvec{I & 0 & \frac{N-M}{2} \\ 0 & I & M }
+\end{align}
+\\
+From (2.0.16), 
+\begin{align}
+    \vec{X} = \frac{\vec{N}-\vec{M}}{2} \notag
     &= \myvec{-1 & -1 \\ -2 & -1}
-    \end{align}
-Thus we get,
-\begin{align*}
-    \vec{X} = \myvec{-1 & -1 \\ -2 & -1}
-\end{align*}
+\end{align}
 \end{document}
