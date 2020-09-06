@@ -197,12 +197,29 @@ Thus, $\vec{A_{1}} = 2\vec{I}$ and $\vec{A_{2}} = \vec{I}$ \\
 Hence we get the matrix, 
 \begin{align*}
     \boxed{\vec{A} =  \myvec{2 & 0 & 1 & 0 \\ 0 & 2 & 0 & 1}}
-\end{align*}
-So from (2.0.1) and (2.0.6), 
+\end{align*}\\~\\
+\textbf{Method 2}(To find $\vec{X}$):  \\
+The first equation is, 
 \begin{align}
-    \implies2\vec{X}+\vec{Y} &= \vec{A}\vec{B} \notag\\
-    &= \myvec{2 & 0 & 1 & 0 \\ 0 & 2 & 0 & 1}\myvec{-1 & -1 \\ -2 & -1 \\ 3 & 2 \\ 1 & 4} \notag \\
-    &= \myvec{1 & 0 \\ -3 & 2 } 
+    \vec{Y} &= \myvec{ 3 & 2 \\ 1 & 4 }\notag\\
+    \implies\myvec{\vec{O} & \vec{I}}\myvec{\vec{X} \\ \vec{Y}} &= \myvec{ 3 & 2 \\ 1 & 4 }
 \end{align}
-   
+The second equation is, 
+\begin{align}
+    2\vec{X}+\vec{Y} = \myvec{1 & 0 \\ -3 & 2} \notag\\
+    \implies\myvec{2\vec{I} & \vec{I}}\myvec{\vec{X} \\ \vec{Y}}
+    &= \myvec{1 & 0 \\ -3 & 2}
+\end{align}
+
+Subtracting (2.0.14) from (2.0.13),
+\begin{align}
+    \implies\myvec{2\vec{I} & \vec{O}}\myvec{\vec{X} \\ \vec{Y}}
+    &= \myvec{-2 & -2 \\ -4 & -2} \notag\\
+    \implies\myvec{\vec{I} & \vec{O}}\myvec{\vec{X} \\ \vec{Y}}
+    &= \myvec{-1 & -1 \\ -2 & -1}
+    \end{align}
+Thus we get,
+\begin{align*}
+    { \vec{X} = \myvec{-1 & -1 \\ -2 & -1} }
+\end{align*}
 \end{document}
