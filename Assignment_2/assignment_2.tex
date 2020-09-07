@@ -138,64 +138,41 @@ columns=fullflexible
 \begin{abstract}
 This assignment involves finding the matrix \vec{X} by solving the equation. 
 \end{abstract}
-The python code solution can be downloaded from
+The python code solution can be downloaded from,
 \begin{lstlisting}
 https://github.com/Vaibhav11002/EE5609/blob/master/Assignment_2/Codes/assignment_2.py
 \end{lstlisting}
 \section{Problem}
-Find $\vec{X}$ if $\vec{Y} = \myvec{ 3 & 2 \\ 1 & 4 }$ and $2\vec{X}+\vec{Y} = \myvec{1 & 0 \\ -3 & 2}$. Express $2\vec{X}+\vec{Y} = \vec{A}\vec{B}$, where B is a block matrix comprising of $\vec{X}$ and $\vec{Y}$ and find the matrix $\vec{A}$. 
+Find X if $Y = \myvec{ 3 & 2 \\ 1 & 4 }$ and $2X+Y = \myvec{1 & 0 \\ -3 & 2}$. 
 \vspace{2mm}
 \section{Solution}
-We have, 
+
+Let, \\
 \begin{align}
-2\vec{X}+\vec{Y} &= \myvec{1 & 0 \\ -3 & 2 } \\
-\implies 2\vec{X} &= \myvec{1 & 0 \\ -3 & 2 } - \vec{Y} \\
-2\vec{X} &= \myvec{1 & 0 \\ -3 & 2 } - \myvec{3 & 2 \\ 1 & 4} \notag \\
-&= \myvec{-2 & -2 \\ -4 & -2 }
+    Y = \myvec{ 3 & 2 \\ 1 & 4 } = M \\
+    2X+ Y = \myvec{1 & 0 \\ -3 & 2} = N
 \end{align}
-Now, 
+Expressing the matrices (2.0.1), (2.0.2) in the vector form, 
 \begin{align}
-\vec{X} &= \frac{1}{2}\myvec{-2 & -2 \\ -4 & -2 } \\
-&= \myvec{-2/2 & -2/2 \\ -4/2 & -2/2 }\notag \\
-&= \myvec{-1 & -1 \\ -2 & -1}
+    \myvec{0 & I }\myvec{X \\Y} &= M \\
+    \myvec{2I & I}\myvec{X \\ Y} &= N
 \end{align}
-Thus from (2.0.5) we get, 
-\begin{align*}
-    \boxed{ \vec{X} = \myvec{-1 & -1 \\ -2 & -1} }
-\end{align*}
-From (2.0.1), 
+Combining equations (2.0.3) and (2.0.4) into a single matrix equation and constructing the augmented matrix, 
 \begin{align}
-    2\vec{X}+\vec{Y} &=\vec{A}\vec{B} \\
-    &= \myvec{1 & 0 \\ -3 & 2}
+    \myvec{0 & I & M \\ 2I & I &  N}
 \end{align}
-Where B is a block matrix comprising $\vec{X}$ and $\vec{Y}$. So, 
+Transforming (2.0.5) using row reduction, 
 \begin{align}
-    \vec{B} &= \myvec{\vec{X} \\ \vec{Y}}
+    \myvec{0 & I & M \\ 2I & I &  N} \xleftrightarrow[]{R1\xleftrightarrow{}R2}\myvec{2I & I & N\\ 0 & I & M}\xleftrightarrow[]{R1 \xleftarrow[]{} R1-R2} \nonumber
 \end{align}
-Now, 
+
 \begin{align}
-    \vec{A}\vec{B} &= \vec{A}\myvec{\vec{X} \\ \vec{Y}} \notag\\
-    &= \myvec{1 & 0 \\ -3 & 2} 
+    \myvec{2I & 0 & N-M \\ 0 & I & M} \xleftrightarrow[]{R1 \xleftarrow[]{} \frac{R1}{2}} \myvec{I & 0 & \frac{N-M}{2} \\ 0 & I & M }
 \end{align}
-Since $\vec{B}$ is a 4x2 matrix, $\vec{A}$ should be 2x4 so that the product $\vec{A}\vec{B}$ is a 2x2 matrix.\\ 
-Let $\vec{A}$ be a block matrix comprising of $\vec{A_{1}}$ and
-$\vec{A_{2}}$. 
+\\
+From (2.0.6), 
 \begin{align}
-    \vec{A} &= \myvec{\vec{A_{1}}& \vec{A_{2}}}
+    X = \frac{ N -M }{2} \notag
+    &= \myvec{-1 & -1 \\ -2 & -1}
 \end{align}
-Now, 
-\begin{align}
-    \vec{A}\vec{B} &= \myvec{\vec{A_{1}}& \vec{A_{2}}}\myvec{\vec{X} \\ \vec{Y}}\notag\\
-    &= \vec{A_{1}}\vec{X} + \vec{A_{2}}\vec{Y}
-\end{align}
-From (2.0.6) we get, 
-\begin{align}
-    2\vec{X}+\vec{Y} &= (2\vec{I})\vec{X} + \vec{I}\vec{Y}\notag\\
-    &=\vec{A_{1}}\vec{X} + \vec{A_{2}}\vec{Y}
-\end{align}
-Thus, $\vec{A_{1}} = 2\vec{I}$ and $\vec{A_{2}} = \vec{I}$ \\
-Hence we get the matrix, 
-\begin{align*}
-    \boxed{\vec{A} =  \myvec{2 & 0 & 1 & 0 \\ 0 & 2 & 0 & 1}}
-\end{align*}
 \end{document}
