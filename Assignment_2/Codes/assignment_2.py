@@ -1,13 +1,13 @@
-#! /usr/bin/python3
 import numpy as np
 
 y = np.array([[3,2], [1,4]])
 
-# let a = 2x + y
-a = np.array([[1, 0] , [-3, 2]])
+#initialising the value of X to verify the problem
 
-# x = (1/2)*(a-y)
-x = (1/2) * (np.subtract(a,y))
+X = np.array([[-1,-1],[-2,-1]])
 
-print("The matrix x is : ", x)
+#calculating the matrix 2X+Y 
 
+2XplusY = 2*X + Y
+
+print("2X + Y = ", 2XplusY)
