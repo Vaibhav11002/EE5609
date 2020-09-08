@@ -136,8 +136,7 @@ columns=fullflexible
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \begin{abstract}
-This assignment involves finding the matrix X by solving the equation. 
-\end{abstract}
+This assignment involves finding the matrix X by solving the equation. \end{abstract}
 The python code solution can be downloaded from,
 \begin{lstlisting}
 https://github.com/Vaibhav11002/EE5609/blob/master/Assignment_2/Codes/assignment_2.py
@@ -147,30 +146,31 @@ Find X if $Y = \myvec{ 3 & 2 \\ 1 & 4 }$ and $2X+Y = \myvec{1 & 0 \\ -3 & 2}$.
 \vspace{2mm}
 \section{Solution}
 
-Let, \\
-\begin{align}
-    Y = \myvec{ 3 & 2 \\ 1 & 4 } = M \\
+Let,
+\begin{align} \label{eq:y}
+    Y = \myvec{ 3 & 2 \\ 1 & 4 } = M 
+\end{align}
+\begin{align} \label{eq:2xplusy}
     2X+ Y = \myvec{1 & 0 \\ -3 & 2} = N
 \end{align}
-Expressing the matrices (2.0.1), (2.0.2) in the vector form, 
+Expressing the matrices \eqref{eq:y}, \eqref{eq:2xplusy} in the vector form, 
 \begin{align}
     \myvec{0 & I }\myvec{X \\Y} &= M \\
     \myvec{2I & I}\myvec{X \\ Y} &= N
 \end{align}
-Combining equations (2.0.3) and (2.0.4) into a single matrix equation and constructing the augmented matrix, 
-\begin{align}
+Combining both the equations into a single matrix equation and constructing the augmented matrix, 
+\begin{align} \label{eq:augmented}
     \myvec{0 & I & M \\ 2I & I &  N}
 \end{align}
-Transforming (2.0.5) using row reduction, 
+Transforming \eqref{eq:augmented} using row reduction, 
 \begin{align}
-    \myvec{0 & I & M \\ 2I & I &  N} \xleftrightarrow[]{R1\xleftrightarrow{}R2}\myvec{2I & I & N\\ 0 & I & M}\xleftrightarrow[]{R1 \xleftarrow[]{} R1-R2} \nonumber
+    \myvec{0 & I & M \\ 2I & I &  N} \xleftrightarrow[]{R1\xleftrightarrow{}R2}\myvec{2I & I & N\\ 0 & I & M}
 \end{align}
 
-\begin{align}
-    \myvec{2I & 0 & N-M \\ 0 & I & M} \xleftrightarrow[]{R1 \xleftarrow[]{} \frac{R1}{2}} \myvec{I & 0 & \frac{N-M}{2} \\ 0 & I & M }
+\begin{align} \label{eq:row_reduced}
+    \xleftrightarrow{R1 \xleftarrow[]{} R1-R2}\myvec{2I & 0 & N-M \\ 0 & I & M} \xleftrightarrow{R1 \xleftarrow[]{} \frac{R1}{2}} \myvec{I & 0 & \frac{N-M}{2} \\ 0 & I & M }
 \end{align}
-\\
-From (2.0.6), 
+From \eqref{eq:row_reduced}, 
 \begin{align}
     X = \frac{ N -M }{2} \notag
     &= \myvec{-1 & -1 \\ -2 & -1}
