@@ -160,7 +160,8 @@ Prove that,
     \xleftrightarrow[R3 \xleftarrow{} \frac{R3}{b}]{R1 \xleftarrow{} \frac{R1}{c} ; R2 \xleftarrow{} \frac{R2}{a}} 2a^2b^2c^2\mydet{0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0}
 \end{multiline}
 \begin{align}
-    &= 2a^2b^2c^2\brak2 \\
-    &= 4a^2b^2c^2 
+    \xleftrightarrow[]{R1 \xleftarrow{} R1+R2-R3} 2a^2b^2c^2\mydet{0 & 0 & 2 \\ 1 & 0 & 1 \\ 1 & 1 & 0} \\
+    \xleftrightarrow[]{R1 \xleftarrow{} \frac{R1}{2}} 4a^2b^2c^2\mydet{0 & 0 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0} &= 4a^2b^2c^2(1) \\
+    &= 4a^2b^2c^2
 \end{align}
 \end{document}
