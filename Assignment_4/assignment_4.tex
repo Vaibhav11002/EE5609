@@ -291,4 +291,25 @@ Equating \eqref{eq:1} and \eqref{eq:2}
     \frac{(\vec{A}-\vec{B})^T(\vec{B}-\vec{C})}{\norm{\vec{A}-\vec{B}}} = 
     \frac{(\vec{A}-\vec{C})^T(\vec{B}-\vec{C})}{\norm{\vec{A}-\vec{C}}}
 \end{align}
+
+Let, $k_1 = \norm{\vec{A}-\vec{B}}$, $k_2 = \norm{\vec{A}-\vec{C}}$
+
+Now, 
+\begin{align}
+    \frac{(\vec{A}-\vec{B})^T(\vec{B}-\vec{C})}{k_1} = 
+    \frac{(\vec{A}-\vec{C})^T(\vec{B}-\vec{C})}{k_2} \\
+    k_2(\vec{A}-\vec{B})^T(\vec{B}-\vec{C}) = 
+    k_1(\vec{A}-\vec{C})^T(\vec{B}-\vec{C}) \\
+    (\vec{B}-\vec{C})[k_2(\vec{A}-\vec{B})^T - k_1(\vec{A}-\vec{C})^T] = 0
+\end{align}
+Thus, 
+\begin{align}
+    k_2(\vec{A}-\vec{B})^T - k_1(\vec{A}-\vec{C})^T = 0 \\
+    k_2(\vec{A}-\vec{B})^T = k_1(\vec{A}-\vec{C})^T
+\end{align}
+Taking norm on both sides, 
+\begin{align}
+    k_2\norm{(\vec{A}-\vec{B})^T} = k_1\norm{(\vec{A}-\vec{C})^T} \\
+    \implies k_2k_1 = k_2k_1
+\end{align}
 \end{document}
