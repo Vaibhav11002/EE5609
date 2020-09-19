@@ -1,3 +1,4 @@
+
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 
 \usepackage{setspace}
@@ -182,21 +183,6 @@ For $k = 2$ the given equation will represent two straight lines.
 \begin{align}
 12x^2-10xy+2y^2+11x-5y+2 = 0 \label{eq:op1}
 \end{align}
-From \eqref{eq:op1} we get, 
-\begin{align}
-    f = 2 \label{eq:f_value} \\
-    \det(V) = \mydet{12 & -5 \\ -5 & 2} = -1 < 0 
-\end{align}
-Since $\det(V)<0$ we can say that two intersecting lines are obtained.
-
-\renewcommand{\thefigure}{\arabic{figure}}
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=\columnwidth]{straightlines.png}
-	\caption{Plot of Straight lines}
-	\label{fig_1}
-\end{figure}
-
 The pair of straight lines in vector form is given by, 
 \begin{align}
     \vec{n_1}^T\vec{x}&=c_1\label{m1}\\
@@ -207,17 +193,25 @@ Equating their product with \eqref{eq:quad_2},
     (\vec{n_1}^T\vec{x}-c_1)(\vec{n_2}^T\vec{x}-c_2)
     = \vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f=0
 \end{align}
+
+Putting the values of $\vec{V}$, $\vec{u}$, $f$ we get,
 \begin{align}
-\vec{n_1}*\vec{n_2}=\{12,-10,2\}\label{conv}\\
+\vec{x}^T\myvec{12 & -5\\ -5 & 2}\vec{x}+2\myvec{\frac{11}{2} & \frac{-5}{2}}\vec{x} + 2 &=0\label{eqline}
+\end{align}
+
+Hence, from \eqref{eqline} we get,
+\begin{align}
+\vec{n_1}*\vec{n_2}=  \myvec{12 \\ -10 \\ 2}\label{conv}\\
 c_2\vec{n_1}+c_1\vec{n_2} = -2\vec{u} =  -2\myvec{\frac{11}{2}\\ \frac{-5}{2}} \label{eqc1c2}\\
 c_1c_2 = f = 2
 \end{align}
-The slopes of the lines are given by the roots of the polynomial 
+The slopes of the lines are given by the roots of the polynomial,
 \begin{align}
     &cm^2+2bm+a=0\label{e}\\
     \implies m_i&=\frac{-b\pm{\sqrt{-\det(V)}}}{c}\\
     \vec{n_i}&=k\myvec{-m_i\\1}
 \end{align}
+
 Substituting the given data in above equations \eqref{e} we get,
 \begin{align}
     &2m^2 -10m + 12 = 0\\
@@ -230,35 +224,26 @@ Solving equation \eqref{m} we get ,
     \vec{n_1}&=k_1\myvec{-3 \\ 1}\label{n1}\\
     \vec{n_2}&=k_2\myvec{-2 \\ 1}\label{n2}
 \end{align}
-Substituting equations \eqref{n1}, \eqref{n2} in equation \eqref{conv} 
+
+Putting values of $\vec{n_1}$ and $\vec{n_2}$ in \eqref{conv}, 
 \begin{align}
-    k_1k_2 &= 2
+    \vec{n_1} * \vec{n_2} = \myvec{-3k_1 & 0 \\ k_1 & -3k_1 \\ 0 & k_1}\myvec{-2k_2 \\ k_2} = \myvec{12 \\ -10 \\ 2} \\
+    \implies\myvec{6k_1k_2 \\ -5k_1k_2 \\ k_1k_2 } = \myvec{12 \\ -10 \\ 2}\label{convres} 
 \end{align}
-The possible combinations of ($k_1,k_2$) are (1,2), (2,1), (-1,-2), (-2,-1). 
+
+Thus from \eqref{convres}, $k_1k_2 = 2$. The possible combinations of ($k_1,k_2$) are (1,2), (2,1), (-1,-2), (-2,-1). 
 Let's assume $k_1=2$, $k_2=1$, we get 
 \begin{align}
     \vec{n_1}&=\myvec{-6 \\ 2}\label{n11}\\
     \vec{n_2}&=\myvec{-2 \\ 1}\label{n22}
 \end{align}
-
-We have:
-\begin{align}
-\vec{n_1}\ast \vec{n_2} = \myvec{a\\2b\\c} \label{eq:conv1}
-\end{align}
-
-Convolution of $\vec{n_1}$ and $\vec{n_2}$ can be done by converting  $\vec{n_1}$ into a teoplitz matrix and multiplying with $\vec{n_2}$\\
-From equation \eqref{n11} and \eqref{n22}. 
-\begin{align}
-    \vec{n_1}=\myvec{-6 & 0 \\ 2 & -6 \\ 0 & 2}
-    \vec{n_2}=\myvec{-2 \\ 1} \label{eq:conv2}\\
-    \implies\myvec{-6 & 0 \\ 2 & -6 \\ 0 & 2}\myvec{-2 \\ 1} = \myvec{12 \\ -10 \\ 2} = \myvec{a\\2b\\c}\label{eq:conv3}
-\end{align}
-
-$c_1$ and $c_2$ can be obtained as, 
+  
+From equation \eqref{eqc1c2} we get,  
 \begin{align}
     \myvec{\vec{n_1} & \vec{n_2}}\myvec{c_2\\c_1} & =-2\myvec{\frac{11}{2}\\\frac{-5}{2}} \\
     \myvec{-6 & -2 \\2 & 1}\myvec{c_2\\c_1} &= \myvec{-11 \\ 5} \label{eq:aug}
 \end{align}
+
 Converting \eqref{eq:aug} to augmented matrix and solving using row reduction, 
 \begin{align}
     \myvec{-6 & -2 & -11 \\ 2 & 1 & 5} \xleftrightarrow[]{R1 \xleftarrow{} \frac{R1}{-6}} \myvec{1 & \frac{1}{3} & \frac{11}{6} \\ 2 & 1 & 5} \\
@@ -276,7 +261,16 @@ Thus we get,
 
 Equations \eqref{m1}, \eqref{m2} can be modified as, 
 \begin{align}
-    \myvec{-6 & 2}\vec{x} &= 4\\
-    \myvec{-2 & 1}\vec{x} &= \frac{1}{2}
+    \myvec{-6 & 2}\vec{x} &= 4  \label{eq:st1}\\
+    \myvec{-2 & 1}\vec{x} &= \frac{1}{2} \label{eq:st2}
 \end{align}
+
+The figure below corresponds to the pair of straight lines represented by \eqref{eq:st1}, \eqref{eq:st2}. 
+\renewcommand{\thefigure}{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\columnwidth]{straightlines.png}
+	\caption{Plot of Straight lines}
+	\label{fig_1}
+\end{figure}
 \end{document}
