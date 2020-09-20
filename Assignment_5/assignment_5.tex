@@ -1,4 +1,3 @@
-
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 
 \usepackage{setspace}
@@ -143,30 +142,21 @@ https://github.com/Vaibhav11002/EE5609/tree/master/Assignment_5
 %
 \section{Problem}
 Find the value of $k$ so that the equation \\$12x^2-10xy+2y^2+11x-5y+k=0$ may represent two straight lines.
-\section{Explanation}
+
+\section{Solution}
 Given equation,
 \begin{align}
 12x^2-10xy+2y^2+11x-5y+k =0 \label{eq:question}
 \end{align}
 is a second order equation.
-The general equation of second degree is given by
-\begin{align}
-    ax^2+2bxy+cy^2+2dx+2ey+f=0\label{eq:quad_1}\\
-    \implies \vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f=0 \label{eq:quad_2}\\
-    \vec{V}=\vec{V}^T=\myvec{a & b \\ b & c} \label{eq:quad_3}\\
-    \vec{u}=\myvec{d \\ e} \label{eq:quad_4}
-\end{align}
-Equation \eqref{eq:quad_2} represents a pair of straight lines if,
-\begin{align}
-\mydet{\vec{V} & \vec{u}\\\vec{u}^T & f}=0 \label{eq:det_1}
-\end{align}
-Comparing equation \eqref{eq:question} with \eqref{eq:quad_1}, we can write in the form of \eqref{eq:quad_3} and \eqref{eq:quad_4} as,
+
+From equation \eqref{eq:question} we get, 
 \begin{align}
     &\vec{V}=\myvec{12 & -5 \\ -5 & 2} \label{eq:eq1}\\ 
     &\vec{u}=\myvec{\frac{11}{2} \\ \frac{-5}{2}} \label{eq:eq2}\\
     & f=k \label{eq:eq3}
 \end{align}
-The given equation represent two straight lines, substituting \eqref{eq:eq1}, \eqref{eq:eq2}, \eqref{eq:eq3} in \eqref{eq:det_1} to satisfy the equation.
+The given equation represent two straight lines if, 
 \begin{align}
     \mydet{12 & -5 & \frac{11}{2} \\ -5 & 2 & \frac{-5}{2}\\\frac{11}{2} & \frac{-5}{2} & k} = 0 \label{eq:solu_1}
 \end{align}
@@ -178,8 +168,8 @@ Expanding the above determinant along row 3,
 \begin{align}
     \implies \boxed{k=2} \label{eq:result}
 \end{align}
-\section{Solution}
-For $k = 2$ the given equation will represent two straight lines.
+
+Thus for $k = 2$ the given equation will represent two straight lines.
 \begin{align}
 12x^2-10xy+2y^2+11x-5y+2 = 0 \label{eq:op1}
 \end{align}
@@ -188,7 +178,7 @@ The pair of straight lines in vector form is given by,
     \vec{n_1}^T\vec{x}&=c_1\label{m1}\\
     \vec{n_2}^T\vec{x}&=c_2\label{m2}
 \end{align}
-Equating their product with \eqref{eq:quad_2}, 
+It can be written as, 
 \begin{align}
     (\vec{n_1}^T\vec{x}-c_1)(\vec{n_2}^T\vec{x}-c_2)
     = \vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f=0
