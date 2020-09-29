@@ -1,0 +1,301 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 8}
+\author{Gaydhane Vaibhav Digraj \\ Roll No. AI20MTECH11002}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document solves a problem using Singular Value Decomposition. 
+\end{abstract}
+%
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Vaibhav11002/EE5609/tree/master/Assignment_8
+\end{lstlisting}
+%
+\section{Problem}
+Find the point on the plane closest to the point $\myvec{6\\5\\9}$ and the plane is determined by the points 
+\begin{align*}
+    \vec{A}=\myvec{3\\-1\\2}, \vec{B}=\myvec{5\\2\\4}, \vec{C}=\myvec{-1\\-1\\6}
+\end{align*}
+
+\section{Solution}
+The equation of plane is given by, 
+\begin{align}
+\vec{n}^T\vec{x} = c \\
+\vec{n}^T\vec{A}=\vec{n}^T\vec{B}=\vec{n}^T\vec{C}=c \\
+\implies \myvec{\vec{A}-\vec{B} & \vec{B}-\vec{C}}^T\vec{n}=0
+\end{align}
+Using row reduction on above matrix, 
+\begin{align}
+    \myvec{-2&-3&-2\\6&3&-2} \xleftrightarrow[]{R_1\xleftarrow{}\frac{R_1}{-2}}
+    \myvec{1&\frac{3}{2}&1\\6&3&-2} \\
+    \xleftrightarrow[]{R_2\xleftarrow{}R_2-6R_1} \myvec{1&\frac{3}{2}&1\\0&-6&-8}\
+    \xleftrightarrow[]{R_2\xleftarrow{}\frac{R_2}{-2}}\myvec{1&\frac{3}{2}&1\\0&3&4}\\
+    \xleftrightarrow[]{R_1\xleftarrow{}R_1-\frac{R_2}{2}} \myvec{1&0&-1\\0&3&4}
+\end{align}
+Thus, 
+\begin{align}
+    \vec{n}&=\myvec{1\\ \frac{-4}{3\\1}} = \myvec{3\\-4\\3} \\
+    c&=\vec{n}^T\vec{A}=19
+\end{align}
+Thus the equation of the plane is, 
+\begin{align}
+    \myvec{3&-4&3}\vec{x}&=19
+\end{align}
+Let $\vec{m_1}$ and $\vec{m_2}$ be the two orthogonal vectors to the given normal.
+Let, $\vec{m}=\myvec{a\\b\\c}$, then
+\begin{align}
+    \vec{m}^T\vec{n}&=0 \\
+    \implies\myvec{a&b&c}\myvec{3\\-4\\3}&=0 \\
+    \implies 3a-4b+3c&=0
+\end{align}
+Let $a=1$, $b=0$ we get,
+\begin{align}
+    \vec{m_1}&=\myvec{1\\0\\-1}
+\end{align}
+Let $a=0$, $b=1$ we get, 
+\begin{align}
+    \vec{m_2}&=\myvec{0\\1\\\frac{4}{3}}
+\end{align}
+Solving the equation, 
+\begin{align} \label{eq:1}
+    \vec{M}\vec{x}&=\vec{b}
+\end{align}
+Putting the values in \eqref{eq:1}, 
+\begin{align} \label{eq:2}
+    \myvec{1&0\\0&1\\-1&\frac{4}{3}}\vec{x}&= \myvec{6\\5\\9}
+\end{align}
+To solve \eqref{eq:2}, we perform Singular Value Decomposition on $\vec{M}$, 
+\begin{align} \label{svd}
+    \vec{M}&=\vec{U}\vec{S}\vec{V}^T
+\end{align}
+Where the columns of $\vec{V}$ are the eigen vectors of $\vec{M}^T\vec{M}$ ,the columns of $\vec{U}$ are the eigen vectors of $\vec{M}\vec{M}^T$ and $\vec{S}$ is diagonal matrix of singular value of eigenvalues of $\vec{M}^T\vec{M}$.
+\begin{align}
+    \vec{M}^T\vec{M}&=\myvec{2&\frac{-4}{3}\\ \frac{-4}{3}& \frac{25}{9}} \label{MTM}\\
+    \vec{M}\vec{M}^T&=\myvec{1&0&-1\\0&1&\frac{4}{3}\\-1&\frac{4}{3}&\frac{25}{9}} \label{MMT}
+\end{align}
+Putting \eqref{svd} in \eqref{eq:1} we get, 
+\begin{align}
+    \vec{U}\vec{S}\vec{V}^T\vec{x}&= \vec{b}\\
+    \implies\vec{x} &= \vec{V}\vec{S_+}\vec{U^T}\vec{b}\label{eq:X}
+\end{align}
+Where $\vec{S_+}$ is Moore-Penrose Pseudo-Inverse of $\vec{S}$. Now, calculating eigen values of $\vec{M}\vec{M}^T$,
+\begin{align}
+\mydet{\vec{M}\vec{M}^T - \lambda\vec{I}} &= 0\\
+\implies\myvec{1-\lambda&0&-1\\0&1-\lambda&\frac{4}{3}\\-1&\frac{4}{3}&\frac{25}{9}-\lambda} &=0\\
+\implies\lambda^3-\frac{43}{9}\lambda^2+\frac{34}{9}\lambda &=0
+\end{align}
+Thus the eigen values of $\vec{M}\vec{M}^T$ are, 
+\begin{align}
+    \lambda_1 &= \frac{34}{9}\\
+    \lambda_2 &= 1 \\
+    \lambda_3 &= 0
+\end{align}
+The eigen vectors comes out to be, 
+\begin{align}
+    \vec{u_1}= \myvec{\frac{-9}{25}\\\frac{12}{25}\\1}, \vec{u_2}=\myvec{\frac{4}{3}\\1\\0}, 
+    \vec{u_3}=\myvec{1\\\frac{-4}{3}\\1}
+\end{align}
+Normalising the eigen vectors, 
+\begin{align}
+    \vec{u_1}= \myvec{\frac{-9}{5\sqrt{34}}\\\frac{12}{5\sqrt{34}}\\\frac{5}{\sqrt{34}}}, 
+    \vec{u_2}=\myvec{\frac{4}{5}\\\frac{3}{5}\\0}, 
+    \vec{u_3}=\myvec{\frac{3}{\sqrt{34}\\\frac{-4}{\sqrt{34}}\\\frac{3}{\sqrt{34}}}}
+\end{align}
+Hence we obtain $\vec{U}$ matrix as, 
+\begin{align}
+    \vec{U}= \myvec{\frac{-9}{5\sqrt{34}}&\frac{4}{5}&\frac{3}{\sqrt{34}} \\ \frac{12}{5\sqrt{34}& \frac{3}{5}& \frac{-4}{\sqrt{34}} \\ \frac{5}{\sqrt{34}}&0&\frac{3}{\sqrt{34}}}} 
+\end{align}
+Now, 
+\begin{align}
+    \vec{S} = \myvec{\frac{\sqrt{34}}{3}&0\\0&1\\0&0}
+\end{align}
+Calculating the eigen values of $\vec{M}^T\vec{M}$, 
+\begin{align}
+    \mydet{\vec{M}^T\vec{M}-\lambda\vec{I}} &=0 \\
+    \implies \myvec{2-\lambda&\frac{-4}{3}\\ \frac{-4}{3}&\frac{25}{9}-\lambda} &=0 \\
+    \implies \lambda^2-\frac{43}{9}\lambda+\frac{34}{9}&=0
+\end{align}
+The eigen values are, 
+\begin{align}
+    \lambda_1&= \frac{34}{9}\\
+    \lambda_2&= 1
+\end{align}
+The eigen vectors are, 
+\begin{align}
+    \vec{v_1}= \myvec{\frac{-3}{4}\\1},
+    \vec{v_2}= \myvec{\frac{4}{3}\\1}
+\end{align}
+Normalising the eigen vectors, 
+\begin{align}
+    \vec{v_1}=\myvec{\frac{-3}{5}\\\frac{4}{5}},
+    \vec{v_2}=\myvec{\frac{4}{5}\\\frac{3}{5}}
+\end{align}
+Hence we obtain $\vec{V}$ matrix as, 
+\begin{align}
+    \vec{V}&= \myvec{\frac{-3}{5}&\frac{4}{5}\\\frac{4}{5}&\frac{3}{5}}
+\end{align}
+Thus we get the Singular Value Decomposition of $\vec{M}$ as, 
+\begin{align}
+    \vec{M}= \myvec{\frac{-9}{5\sqrt{34}}&\frac{4}{5}&\frac{3}{\sqrt{34}} \\ \frac{12}{5\sqrt{34}& \frac{3}{5}& \frac{-4}{\sqrt{34}} \\ \frac{5}{\sqrt{34}}&0&\frac{3}{\sqrt{34}}}}\myvec{\frac{\sqrt{34}}{3}&0\\0&1\\0&0}\myvec{\frac{-3}{5}&\frac{4}{5}\\\frac{4}{5}&\frac{3}{5}}^T
+\end{align}
+The Moore-Penrose Pseudo inverse of $\vec{S}$ is given by, 
+\begin{align}
+    \vec{S_+}= \myvec{\frac{3}{\sqrt{34}&0&0\\ 0&1&0}}
+\end{align}
+From \eqref{eq:X} we get, 
+\begin{align}
+    \vec{U}^T\vec{b}= \myvec{\frac{231}{5\sqrt{34}} \\ \frac{39}{5} \\ \frac{25}{\sqrt{34}}}\\
+    \vec{S_+}\vec{U}^T\vec{b}= \myvec{\frac{693}{170} \\ \frac{39}{5}}\\
+    \vec{x}=\vec{V}\vec{S_+}\vec{U}^T\vec{b}= \myvec{\frac{129}{34} \\ \frac{135}{17}} \label{eq:xsol1}
+\end{align}
+Verifying the solution of \eqref{eq:xsol1} using, 
+\begin{align}
+    \vec{M}^T\vec{M}\vec{x} = \vec{M}^T\vec{b}\label{eq:verify}
+\end{align}
+Evaluating the R.H.S in \eqref{eq:verify} we get,
+\begin{align}
+    \vec{M}^T\vec{b}&= \myvec{-3\\17} \\
+    \implies\myvec{2&\frac{-4}{3}\\ \frac{-4}{3}& \frac{25}{9}}\vec{x}&= \myvec{-3\\17} \label{eq:mtbx}
+\end{align}
+Solving the augmented matrix of \eqref{eq:mtbx} we get, 
+\begin{align}
+    \myvec{2&\frac{-4}{3}&-3\\\frac{-4}{3}&\frac{25}{9}&17}&\xleftrightarrow{R_1\xleftarrow{}\frac{R_1}{2}} \myvec{1&\frac{-2}{3}&\frac{-3}{2}\\ \frac{-4}{3}&\frac{25}{9}&17} \\
+    &\xleftrightarrow{R_2\xleftarrow{}R_2+\frac{4}{3}R-1} \myvec{1&\frac{-2}{3}&\frac{-3}{2}\\ 0&\frac{17}{9}&15}\\
+    &\xleftrightarrow{R_1\xleftarrow{}R_1+\frac{6}{17}R_2} \myvec{1&0&\frac{129}{34}\\0&\frac{17}{9}&15}\\
+    &\xleftrightarrow{R_2\xleftarrow{}\frac{9}{17}R_2} \myvec{1&0&\frac{129}{34}\\0&1&\frac{135}{17}}
+\end{align}
+Hence, solution of \eqref{eq:verify} is given by, 
+\begin{align}\label{eq:xsol2}
+    \vec{x}=\myvec{\frac{129}{34} \\ \frac{135}{17}}
+\end{align}
+Comparing results of $\vec{x}$ from \eqref{eq:xsol1} and \eqref{eq:xsol2} we conclude that the solution is verified. 
+\end{document}
