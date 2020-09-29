@@ -155,15 +155,15 @@ The equation of plane is given by,
 \end{align}
 Using row reduction on above matrix, 
 \begin{align}
-    \myvec{-2&-3&-2\\6&3&-2} \xleftrightarrow[]{R_1\xleftarrow{}\frac{R_1}{-2}}
+    \myvec{-2&-3&-2\\6&3&-2} \xleftrightarrow{R_1\xleftarrow{}\frac{R_1}{-2}}
     \myvec{1&\frac{3}{2}&1\\6&3&-2} \\
-    \xleftrightarrow[]{R_2\xleftarrow{}R_2-6R_1} \myvec{1&\frac{3}{2}&1\\0&-6&-8}\
-    \xleftrightarrow[]{R_2\xleftarrow{}\frac{R_2}{-2}}\myvec{1&\frac{3}{2}&1\\0&3&4}\\
-    \xleftrightarrow[]{R_1\xleftarrow{}R_1-\frac{R_2}{2}} \myvec{1&0&-1\\0&3&4}
+    \xleftrightarrow{R_2\xleftarrow{}R_2-6R_1} \myvec{1&\frac{3}{2}&1\\0&-6&-8}\
+    \xleftrightarrow{R_2\xleftarrow{}\frac{R_2}{-2}}\myvec{1&\frac{3}{2}&1\\0&3&4}\\
+    \xleftrightarrow{R_1\xleftarrow{}R_1-\frac{R_2}{2}} \myvec{1&0&-1\\0&3&4}
 \end{align}
 Thus, 
 \begin{align}
-    \vec{n}&=\myvec{1\\ \frac{-4}{3\\1}} = \myvec{3\\-4\\3} \\
+    \vec{n}&=\myvec{1\\ \frac{-4}{3}\\1} = \myvec{3\\-4\\3} \\
     c&=\vec{n}^T\vec{A}=19
 \end{align}
 Thus the equation of the plane is, 
@@ -183,7 +183,7 @@ Let $a=1$, $b=0$ we get,
 \end{align}
 Let $a=0$, $b=1$ we get, 
 \begin{align}
-    \vec{m_2}&=\myvec{0\\1\\\frac{4}{3}}
+    \vec{m_2}&=\myvec{0 \\ 1 \\ \frac{4}{3}}
 \end{align}
 Solving the equation, 
 \begin{align} \label{eq:1}
@@ -228,11 +228,11 @@ Normalising the eigen vectors,
 \begin{align}
     \vec{u_1}= \myvec{\frac{-9}{5\sqrt{34}}\\\frac{12}{5\sqrt{34}}\\\frac{5}{\sqrt{34}}}, 
     \vec{u_2}=\myvec{\frac{4}{5}\\\frac{3}{5}\\0}, 
-    \vec{u_3}=\myvec{\frac{3}{\sqrt{34}\\\frac{-4}{\sqrt{34}}\\\frac{3}{\sqrt{34}}}}
+    \vec{u_3}=\myvec{\frac{3}{\sqrt{34}} \\ \frac{-4}{\sqrt{34}} \\ \frac{3}{\sqrt{34}}}
 \end{align}
 Hence we obtain $\vec{U}$ matrix as, 
 \begin{align}
-    \vec{U}= \myvec{\frac{-9}{5\sqrt{34}}&\frac{4}{5}&\frac{3}{\sqrt{34}} \\ \frac{12}{5\sqrt{34}& \frac{3}{5}& \frac{-4}{\sqrt{34}} \\ \frac{5}{\sqrt{34}}&0&\frac{3}{\sqrt{34}}}} 
+    \vec{U}= \myvec{\frac{-9}{5\sqrt{34}} & \frac{4}{5} & \frac{3}{\sqrt{34}} \\ \frac{12}{5\sqrt{34}} & \frac{3}{5} & \frac{-4}{\sqrt{34}} \\ \frac{5}{\sqrt{34}} & 0 & \frac{3}{\sqrt{34}}}
 \end{align}
 Now, 
 \begin{align}
@@ -265,11 +265,11 @@ Hence we obtain $\vec{V}$ matrix as,
 \end{align}
 Thus we get the Singular Value Decomposition of $\vec{M}$ as, 
 \begin{align}
-    \vec{M}= \myvec{\frac{-9}{5\sqrt{34}}&\frac{4}{5}&\frac{3}{\sqrt{34}} \\ \frac{12}{5\sqrt{34}& \frac{3}{5}& \frac{-4}{\sqrt{34}} \\ \frac{5}{\sqrt{34}}&0&\frac{3}{\sqrt{34}}}}\myvec{\frac{\sqrt{34}}{3}&0\\0&1\\0&0}\myvec{\frac{-3}{5}&\frac{4}{5}\\\frac{4}{5}&\frac{3}{5}}^T
+    \vec{M}= \myvec{\frac{-9}{5\sqrt{34}} & \frac{4}{5} & \frac{3}{\sqrt{34}} \\ \frac{12}{5\sqrt{34}} & \frac{3}{5}& \frac{-4}{\sqrt{34}} \\ \frac{5}{\sqrt{34}} & 0 & \frac{3}{\sqrt{34}}}\myvec{\frac{\sqrt{34}}{3} & 0 \\ 0 & 1 \\ 0 & 0}\myvec{\frac{-3}{5}&\frac{4}{5} \\ \frac{4}{5} & \frac{3}{5}}^T
 \end{align}
 The Moore-Penrose Pseudo inverse of $\vec{S}$ is given by, 
 \begin{align}
-    \vec{S_+}= \myvec{\frac{3}{\sqrt{34}&0&0\\ 0&1&0}}
+    \vec{S_+}= \myvec{\frac{3}{\sqrt{34}} & 0 & 0 \\ 0 & 1 & 0}
 \end{align}
 From \eqref{eq:X} we get, 
 \begin{align}
