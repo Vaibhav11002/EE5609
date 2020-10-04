@@ -144,7 +144,7 @@ https://github.com/Vaibhav11002/EE5609/tree/master/Assignment_9
 Let $\mathbb{F}$ be the field of complex numbers. Are the following two systems of linear equations equivalent? If so, express each equation in each system as a linear combination of the equations in the other system.
 \begin{align*}
     x_1 - x_2 &=0\\
-    x_1 + x_2 &=0
+    2x_1 + x_2 &=0
 \end{align*}
 and 
 \begin{align*}
@@ -176,10 +176,15 @@ Thus we get $\vec{B}$ from matrix $\vec{A}$ by multiplying it with matrix $\vec{
     =\myvec{\frac{1}{3}&\frac{4}{3} \\ \frac{-1}{3}&\frac{2}{3}}
 \end{multline}
 Thus, since matrix $\vec{B}$ can be obtained from matrix $\vec{A}$ by a finite sequence of elementary row operations on $\vec{A}$, the given two system of linear equations are equivalent. 
-Thus, '
+Thus, 
+\begin{multline}
+    \vec{B} = \vec{C}\vec{A} \\
+    \implies \myvec{3&1\\1&1} = \myvec{1&0\\\frac{1}{3}&1}\myvec{1&0\\0&\frac{2}{3}}\myvec{1&1\\0&1}\myvec{3&0\\0&1}\myvec{1&1\\0&1}\\
+    \myvec{1&0\\0&\frac{1}{3}}\myvec{1&0\\-2&1}\myvec{1&-1\\2&1}
+\end{multline}
 \begin{align}
-    \vec{B} &= \vec{C}\vec{A} \\
-    \implies \myvec{3&1\\1&1} &= \myvec{\frac{1}{3}&\frac{4}{3} \\ \frac{-1}{3}&\frac{2}{3}}\myvec{1&-1\\2&1} \label{lin}
+    \implies \myvec{3&1\\1&1} = \myvec{\frac{1}{3}&\frac{4}{3} \\ \frac{-1}{3}&\frac{2}{3}}\myvec{1&-1\\2&1} \label{lin}
 \end{align}
-From \eqref{lin}, it can be seen that each equation in system $\vec{B}$ is a linear combination of equation in system $\vec{A}$. 
+
+From \eqref{lin}, it can be seen that each equation in system $\vec{B}$ is a linear combination of equations in system $\vec{A}$. 
 \end{document}
