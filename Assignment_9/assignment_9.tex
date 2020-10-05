@@ -154,37 +154,50 @@ and
 \section{Solution}
 The given system of linear equations can be written as,   
 \begin{align}
-    \vec{A}\vec{x} &= 0 \label{ax=0}\\
-    \implies\myvec{1&-1\\2&1}\vec{x} &= 0 \\
-    \vec{B}\vec{x} &= 0 \label{bx=0}\\
-    \implies\myvec{3&1\\1&1}\vec{x} &= 0
+    \vec{A}\vec{x} &= 0 \\
+    \implies\myvec{1&-1\\2&1}\vec{x} &= 0 \label{ax=0}\\
+    \vec{B}\vec{x} &= 0 \\
+    \implies\myvec{3&1\\1&1}\vec{x} &= 0 \label{bx=0}
 \end{align}
-Consider $\vec{A}$, performing row operation using elementary matrices, 
+Now we can obtain $\vec{B}$ from matrix $\vec{A}$ by performing elementary row operations given as, 
 \begin{align}
-    &\vec{A} = \myvec{1&-1\\2&1} \\
-    &\xleftrightarrow{}\myvec{1&0\\-2&1}\myvec{1&-1\\2&1} = \myvec{1&-1\\0&3} \\
-    &\xleftrightarrow{}\myvec{1&0\\0&\frac{1}{3}}\myvec{1&-1\\0&3} = \myvec{1&-1\\0&1} \\
-    &\xleftrightarrow{}\myvec{1&1\\0&1}\myvec{1&-1\\0&1} = \myvec{1&0\\0&1}\\
-    &\xleftrightarrow{}\myvec{3&0\\0&1}\myvec{1&0\\0&1} = \myvec{3&0\\0&1} \\
-    &\xleftrightarrow{}\myvec{1&1\\0&1}\myvec{3&0\\0&1} = \myvec{3&1\\0&1} \\
-    &\xleftrightarrow{}\myvec{1&0\\0&\frac{2}{3}}\myvec{3&1\\0&1} = \myvec{3&1\\0&\frac{2}{3}} \\
-    &\xleftrightarrow{}\myvec{1&0\\\frac{1}{3}&1}\myvec{3&1\\0&\frac{2}{3}} = \myvec{3&1\\1&0} = \vec{B}
+    &\vec{B} = \vec{C}\vec{A} \\
+    &\myvec{3&1\\1&1} = \vec{C}\myvec{1&-1\\2&1}
 \end{align}
-Thus we get $\vec{B}$ from matrix $\vec{A}$ by multiplying it with matrix $\vec{C}$, where $\vec{C}$ is product of elementary matrices given as, 
+where $\vec{C}$ is product of elementary matrices given as, 
 \begin{multline}
-    \vec{C} = \myvec{1&0\\\frac{1}{3}&1}\myvec{1&0\\0&\frac{2}{3}}\myvec{1&1\\0&1}\myvec{3&0\\0&1}\myvec{1&1\\0&1}\myvec{1&0\\0&\frac{1}{3}}\myvec{1&0\\-2&1} \\
+    \vec{C} = \brak{\vec{E_7}\vec{E_6}\vec{E_5}\vec{E_4}\vec{E_3}\vec{E_2}\vec{E_1}}\\
+    =\myvec{1&0\\\frac{1}{3}&1}\myvec{1&0\\0&\frac{2}{3}}\myvec{1&1\\0&1}\myvec{3&0\\0&1}\myvec{1&1\\0&1}\myvec{1&0\\0&\frac{1}{3}}\myvec{1&0\\-2&1} \\
     =\myvec{\frac{1}{3}&\frac{4}{3} \\ \frac{-1}{3}&\frac{2}{3}}
 \end{multline}
-Thus, since matrix $\vec{B}$ can be obtained from matrix $\vec{A}$ by a finite sequence of elementary row operations on $\vec{A}$, the given two system of linear equations are equivalent. 
-Thus, 
-\begin{multline}
-    \vec{B} = \vec{C}\vec{A} \\
-    \implies \myvec{3&1\\1&1} = \myvec{1&0\\\frac{1}{3}&1}\myvec{1&0\\0&\frac{2}{3}}\myvec{1&1\\0&1}\myvec{3&0\\0&1}\myvec{1&1\\0&1}\\
-    \myvec{1&0\\0&\frac{1}{3}}\myvec{1&0\\-2&1}\myvec{1&-1\\2&1}
-\end{multline}
+Now, performing elementary operations on the right side of $\vec{A}$ we obtain matrix $\vec{B}$ given as, 
 \begin{align}
-    \implies \myvec{3&1\\1&1} = \myvec{\frac{1}{3}&\frac{4}{3} \\ \frac{-1}{3}&\frac{2}{3}}\myvec{1&-1\\2&1} \label{lin}
+    &\vec{B} = \vec{A}\vec{C}^{'} \\
+    &\myvec{3&1\\1&1} = \myvec{1&-1\\2&1}\vec{C}^{'}
 \end{align}
-
-From \eqref{lin}, it can be seen that each equation in system $\vec{B}$ is a linear combination of equations in system $\vec{A}$. 
+where, $\vec{C}^{'}$ is product of elementary matrices given by, 
+\begin{multline}
+    \vec{C}^{'} = \brak{\vec{E_1}\vec{E_2}\vec{E_3}\vec{E_4}\vec{E_5}}\\
+    =\myvec{1&0\\-2&1}\myvec{\frac{1}{3}&0\\0&1}\myvec{1&2\\0&1}\myvec{2&0\\0&1}\myvec{1&0\\1&1}
+    = \myvec{\frac{4}{3}&\frac{2}{3}\\ \frac{-5}{3}&\frac{-1}{3}}
+\end{multline}
+Thus \eqref{bx=0} can be obtained from \eqref{ax=0} by multiplying it with matrix $\vec{C}$ or $\vec{C}^{'}$, where each one is product of elementary matrices and hence invertible. 
+Thus the two given homogeneous systems are row equivalent.  
+Now writing equations in matrix-vector form as, 
+\begin{align}
+    3x_1 + x_2 &= \myvec{3&1}\vec{x} \\
+    \implies \myvec{3&1}\vec{x} &= \frac{1}{3}\myvec{1&-1}\vec{x} + \frac{4}{3}\myvec{2&1}\vec{x} \label{b1}\\
+    x_1 + x_2 &= \myvec{1&1}\vec{x} \\
+    \implies \myvec{1&1}\vec{x} &= \frac{-1}{3}\myvec{1&-1}\vec{x} + 
+    \frac{2}{3}\myvec{2&1}\vec{x} \label{b2}
+\end{align}
+Thus, each equation in second system can be expressed as linear combination of equations in first system. 
+This can be verified from the entries of $\vec{C}$ as they take the linear combination of each rows of matrix $\vec{A}$. 
+Similarly, 
+\begin{align}
+    x_1 - x_2 &= \myvec{1&-1}\vec{x} \\
+    \implies\myvec{1&-1}\vec{x} &= (1)\myvec{3&1}\vec{x} + (-2)\myvec{1&1}\vec{x} \label{a1}\\
+    2x_1 + x_2 &= \myvec{2&1}\vec{x} \\
+    \implies \myvec{2&1}\vec{x} &= \frac{1}{2}\myvec{3&1}\vec{x} + \frac{1}{2}\myvec{1&1}\vec{x} \label{a2}
+\end{align}
 \end{document}
