@@ -1,0 +1,220 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 10}
+\author{Gaydhane Vaibhav Digraj \\ Roll No. AI20MTECH11002}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document solves a problem involving matrix multiplication.
+\end{abstract}
+%
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Vaibhav11002/EE5609/tree/master/Assignment_10
+\end{lstlisting}
+%
+\section{Problem}
+Find two different 2$\times$2 matrices $\vec{A}$ such that 
+
+$\vec{A}^{2}=0$ but $\vec{A}\ne0$
+
+\section{Solution}
+The matrix $\vec{A}$ can be given by, 
+\begin{align}
+    \vec{A} = \myvec{\vec{m}&\vec{n}} \\
+    \vec{m} = \myvec{m_1\\m_2}, \vec{n} = \myvec{n_1\\n_2}
+\end{align}
+Now, 
+\begin{align}
+    \vec{A}^{2} &= \vec{A}\vec{A} = 0 \\
+    \implies\vec{A}^{2} &= \myvec{m_1&n_1\\m_2&n_2}\myvec{\vec{m}&\vec{n}} = \myvec{\vec{c_1}&\vec{c_2}} = 0 \label{A2}
+\end{align}
+From \eqref{A2}, we say that the columns of matrix $\vec{A}$ must lie in the null space of $\vec{A}$. Also atleast one of the columns must be non-zero since given $\vec{A}\ne0$. 
+Thus, the null space of $\vec{A}$ contains non zero vectors, hence $rank(\vec{A})<2$. 
+This implies that the columns of $\vec{A}$ are linearly dependent.
+Hence, $\vec{A}$ is a singular matrix. 
+\begin{align}
+    \vec{c_1} &= m_1\myvec{m_1\\m_2} + m_2\myvec{n_1\\n_2} = 0 \\
+    \vec{c_2} &= n_1\myvec{m_1\\m_2} + n_2\myvec{n_1\\n_2} = 0
+\end{align}
+%Since $\vec{A}\ne0$, we say $\vec{m}=\vec{n}\ne0$
+Let's assume, 
+\begin{align}
+    \vec{m} &= \myvec{a\\a}
+\end{align}
+then, 
+\begin{align}
+    &\vec{c_1} = \myvec{a^2+an_1\\a^2+an_2}=0
+\end{align}
+thus $a=0$ or $n_1=n_2=-a$. When $a=0$, 
+\begin{align}
+    &\implies\vec{c_2} = \myvec{n_1n_2\\n_2^2}=0\\
+    &\implies n_2 = 0
+\end{align}
+Thus we get, 
+\begin{align}
+    \vec{A} &= \myvec{a&-a\\a&-a} ; a\ne0
+\end{align}
+and
+\begin{align}
+    \vec{A} &= \myvec{0&n_1\\0&0} ; n_1\ne0
+\end{align}
+Now, let's assume, 
+\begin{align}
+    \vec{n} &= \myvec{a\\a}
+\end{align}
+then, 
+\begin{align}
+    \vec{c_2} &= \myvec{am_1+a^2\\am_2+a^2} = 0
+\end{align}
+thus $a=0$ or $m_1=m_2=-a$. When $a=0$, 
+\begin{align}
+    &\implies\vec{c_1} = \myvec{m_1^2\\m_1m_2}=0\\
+    &\implies m_1=0
+\end{align}
+Thus we get, 
+\begin{align}
+    \vec{A} &= \myvec{-a&a\\-a&a} ; a\ne0
+\end{align}
+and 
+\begin{align}
+    \vec{A} &= \myvec{0&0\\m_2&0} ; m_2\ne0
+\end{align}
+One such matrix also is, 
+\begin{align}
+    \vec{A} &= \myvec{a&a\\-a&-a} ; a\ne0
+\end{align}
+Thus two different 2$\times2$ matrices are, 
+\begin{align}
+    \vec{A}&=\myvec{0&1\\0&0}\\
+    \vec{A}&=\myvec{2&-2\\2&-2}
+\end{align}
+
+\end{document}
