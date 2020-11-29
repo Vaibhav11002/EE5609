@@ -1,0 +1,219 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{caption} 
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator{\range}{range}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 18}
+\author{Gaydhane Vaibhav Digraj \\ Roll No. AI20MTECH11002}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document solves a problem based on polynomial vector spaces.
+\end{abstract}
+%
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Vaibhav11002/EE5609/tree/master/Assignment_18
+\end{lstlisting}
+%
+\section{Problem}
+Consider the vector space V of real polynomials of degree less than or equal to n. Fix distinct real numbers $a_0, a_1, \cdots, a_k$. For $p \in V$
+\begin{align*}
+    max\cbrak{\abs{p(a_j)}: 0\leq j \leq k}
+\end{align*}
+defines a norm on V
+\begin{enumerate}
+    \item only if $k<n$
+    \item only if $k\ge n$
+    \item if $ k+1\leq n$ 
+    \item if $k \ge n+1$
+\end{enumerate}
+
+\section{Solution}
+Options 2 and 4 are correct as verified in the table \ref{table2}
+\renewcommand{\thetable}{1}
+\begin{table*}[ht!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Properties}&\textbf{Norm $\forall x \in V$}\\
+\hline
+1. Positivity & $\norm{x}\ge 0, \norm{x} = 0 \iff x=0 $ \\
+\hline
+2. Scalar Multiplication & $\norm{\alpha x} = \abs{\alpha}\norm{x}, \alpha \in F $\\
+\hline
+3. Triangle Inequality & $\norm{x+y} \le \norm{x} + \norm{y} $\\
+\hline
+\end{tabular}
+\caption{Properties of Norm}
+\label{table1}
+\end{center}
+\end{table*}
+
+\renewcommand{\thetable}{2}
+\begin{table*}[ht!]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{
+For $p \in V$ then the norm, 
+$max\cbrak{\abs{p(a_j)}: 0 \leq j \leq k}=0 \iff \abs{p(a_j)}_{0 \leq j \leq k}=0$
+} \\[3ex]
+\hline
+\textbf{Conditions} & \textbf{Explanation} \\[0.5ex]
+\hline
+\text{only if $k < n$} & 
+ A polynomial doesn't necessarily have $k+1$ distinct real roots,\\
+&i.e., for some $j$, $\abs{p(a_j)} \ne 0 $\\
+& thus $p$ is not identically zero. Thus condition fails.
+\\ [0.5ex]
+\hline
+\text{only if $k\ge n$} & 
+p is a polynomial of degree $\le$n,\\
+& it can't have more than $n$ roots and is only possible when,\\
+&$p(x)=0 \implies \abs{p(a_j)}_{0 \leq j \leq k}=0$\\
+& hence $p$ is identically zero. Thus condition satisfies.
+\\ [0.5ex]
+\hline
+\text{if $k+1 \leq n$} & 
+Not a norm for $k<n$. Hence incorrect. 
+\\ [0.5ex]
+\hline
+\text{if $k \ge n+1$} &
+Norm for $k \ge n$. Hence correct.
+\\[0.5ex]
+\hline
+\end{tabular}
+\caption{Verifying Property 1 of Norm}
+\label{table2}
+\end{center}
+\end{table*}
+
+
+\end{document}
